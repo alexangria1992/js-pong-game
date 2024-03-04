@@ -25,6 +25,18 @@ let player2 = {
   velocityY: 0,
 };
 
+//ball
+let ballWidth = 10;
+let ballHeight = 10;
+let ball = {
+  x: boardWidth / 2,
+  y: boardHeight / 2,
+  width: ballWidth,
+  height: ballHeight,
+  velocityX: 1,
+  velocityY: 2,
+};
+
 window.onload = function () {
   board = document.getElementById("board");
   board = document.getElementById("board");
@@ -58,6 +70,12 @@ function update() {
     player2.y = nextPlayer2Y;
   }
   context.fillRect(player2.x, player2.y, player2.width, player2.height);
+
+  // ball
+  context.fillStyle = "white";
+  ball.x += ball.velocityX;
+  ball.y += ball.velocityY;
+  context.fillRect(ball.x, ball.y, ball.width, ball.height);
 }
 
 function outOfBounds(yPosition) {

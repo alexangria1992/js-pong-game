@@ -24,4 +24,13 @@ window.onload = function () {
   //draw.initial player1
   context.fillStyle = "skyblue";
   context.fillRect(player1.x, player1.y, player1.width, player1.height);
+
+  requestAnimationFrame(update);
 };
+
+function update() {
+  requestAnimationFrame(update);
+  //draw.initial player1
+  context.fillStyle = "skyblue";
+  context.fillRect(player1.x, player1.y, player1.width, player1.height);
+}

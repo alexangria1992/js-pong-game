@@ -7,12 +7,14 @@ let context;
 //players
 let playerWidth = 10;
 let playerHeight = 50;
+let playerVelocityY = 0;
 
 let player1 = {
   x: 10,
   y: boardHeight / 2,
   width: playerWidth,
   height: playerHeight,
+  velocityY: playerVelocityY,
 };
 
 let player2 = {
@@ -20,6 +22,7 @@ let player2 = {
   y: boardHeight / 2,
   width: playerWidth,
   height: playerHeight,
+  velocityY: playerVelocityY,
 };
 
 window.onload = function () {

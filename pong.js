@@ -45,14 +45,24 @@ function update() {
   context.clearRect(0, 0, board.width, board.height);
   //draw  player1
   context.fillStyle = "skyblue";
-  player1.y += player1.velocityY;
+  let nextPlayer1Y = player1.y + player1.velocityY;
+  if (!outOfBounds(nextPlayer1Y)) {
+    player1.y = nextPlayer1Y;
+  }
   context.fillRect(player1.x, player1.y, player1.width, player1.height);
 
   //player 2
-  player2.y += player2.velocityY;
+  //   player2.y += player2.velocityY;
+  let nextPlayer2Y = player2.y + player2.velocityY;
+  if (!outOfBounds(nextPlayer2Y)) {
+    player2.y = nextPlayer2Y;
+  }
   context.fillRect(player2.x, player2.y, player2.width, player2.height);
 }
 
+function outOfBounds(yPosition) {
+  return yPosition < 0 || yPosition + playerHeight > boardHeight;
+}
 function movePlayer(e) {
   //player1
   if (e.code == "KeyW") {

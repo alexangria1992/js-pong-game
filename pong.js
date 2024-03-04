@@ -37,6 +37,8 @@ let ball = {
   velocityY: 2,
 };
 
+letPlayer1Score = 0;
+letPlayer2Score = 0;
 window.onload = function () {
   board = document.getElementById("board");
   board = document.getElementById("board");
